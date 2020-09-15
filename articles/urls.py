@@ -1,8 +1,8 @@
 from django.urls import path, include
-from articles import views
-
+from articles.views import PostsListView, PostDetailView
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', PostsListView.as_view(), name='list'),
+    path('<pk>/', PostDetailView.as_view())
 ]
 

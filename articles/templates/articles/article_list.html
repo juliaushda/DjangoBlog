@@ -1,0 +1,12 @@
+{% block content %}
+    {% for article in object_list %}
+        <p>{{ post.datetime }}</p>
+        <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+        <p>{{ article.get_short_text }}</p>
+    {% empty %}
+    <p>Нет постов</p>
+    {% endfor %}
+
+{% endblock %}
+
+
